@@ -1,22 +1,24 @@
 public class Cat {
-    String name;
-    String ownername;
-    int age;
-    int food;
+    String nameC;
+    String catOwnerName;
+    int ageC;
+    int foodC;
     boolean isHungry;
 
     void owner() {
-        if (ownername.equals("Ульяна")) {
-            name = "Мальта";
+        if (catOwnerName.equals("Ульяна")) {
+            nameC = "Мальта";
+        } else {
+            System.out.println("Безхозная кошка");
         }
     }
 
     void meow() {
-        System.out.println("%s :Meow".formatted(name));
+        System.out.println("%s: Мяу".formatted(nameC));
     }
 
     void meowmeow() {
-        if (food <= 3) {
+        if (foodC <= 3) {
             System.out.println("Хочу кушать");
         }
     }
