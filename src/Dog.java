@@ -1,4 +1,4 @@
-public class Dog {
+public class Dog extends Animal {
     String nameD;
     String dogOwnerName;
     private int ageD = 9;
@@ -14,7 +14,6 @@ public class Dog {
     }
 
 
-
     void owner() {
         if (dogOwnerName.equalsIgnoreCase("Никита") || dogOwnerName.equalsIgnoreCase("Nikita")) {
             nameD = "Моника";
@@ -28,8 +27,9 @@ public class Dog {
         return nameD;
     }
 
-    void bark() {
-        System.out.printf("%s: Гав\n".formatted(nameD));
+    @Override
+    void sound() {
+        System.out.println(nameD + " гавкает");
     }
 
     void barkbark() {

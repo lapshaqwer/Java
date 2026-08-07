@@ -1,4 +1,4 @@
-public class Cat {
+public class Cat extends Animal {
     String nameC;
     String catOwnerName;
     private int ageC;
@@ -18,13 +18,18 @@ public class Cat {
         if (catOwnerName.equalsIgnoreCase("Ульяна") || catOwnerName.equalsIgnoreCase("Uliana")) {
             nameC = "Мальта";
         } else {
-            System.out.print("Безхозная кошка");
+            System.out.print("Безхозная кошка\n");
             nameC = "Безхозная кошка";
         }
     }
 
-    void meow() {
-        System.out.println(nameC + " : Мяу");
+    String newNameC() {
+        return nameC;
+    }
+
+    @Override
+    void sound() {
+        System.out.println(nameC + " мяукает");
     }
 
     void meowmeow() {
