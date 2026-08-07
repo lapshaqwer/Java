@@ -1,15 +1,31 @@
 public class Dog {
     String nameD;
     String dogOwnerName;
-    int ageD;
+    private int ageD = 9;
     int foodD;
 
+    public void setAgeD (int newAgeD) {
+        if (newAgeD > 1 && newAgeD < 10) {
+            ageD = newAgeD;
+            System.out.println("Все отлично");
+        } else {
+            System.out.println("Число должно быть от 1 до 10!");
+        }
+    }
+
+
+
     void owner() {
-        if (dogOwnerName.equals("Никита")) {
+        if (dogOwnerName.equalsIgnoreCase("Никита") || dogOwnerName.equalsIgnoreCase("Nikita")) {
             nameD = "Моника";
         } else {
-            System.out.println("Безхозная собака");
+            System.out.print("Безхозная собака");
+            nameD = "Безхозная собака";
         }
+    }
+
+    public String getNameD() {
+        return nameD;
     }
 
     void bark() {
@@ -18,7 +34,7 @@ public class Dog {
 
     void barkbark() {
         if (foodD <= 10) {
-            System.out.println("%s хочет кушать".formatted(nameD));
+            System.out.println(nameD + " хочет кушать");
         }
     }
 

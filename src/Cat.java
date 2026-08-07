@@ -1,25 +1,35 @@
 public class Cat {
     String nameC;
     String catOwnerName;
-    int ageC;
+    private int ageC;
     int foodC;
-    boolean isHungry;
+    //boolean isHungry;
+
+    public int setAgeC(int NewAgeC) {
+        ageC = NewAgeC;
+        return ageC;
+    }
+
+    public int getAgeC() {
+        return this.ageC;
+    }
 
     void owner() {
-        if (catOwnerName.equals("Ульяна")) {
+        if (catOwnerName.equalsIgnoreCase("Ульяна") || catOwnerName.equalsIgnoreCase("Uliana")) {
             nameC = "Мальта";
         } else {
-            System.out.println("Безхозная кошка");
+            System.out.print("Безхозная кошка");
+            nameC = "Безхозная кошка";
         }
     }
 
     void meow() {
-        System.out.println("%s: Мяу".formatted(nameC));
+        System.out.println(nameC + " : Мяу");
     }
 
     void meowmeow() {
         if (foodC <= 3) {
-            System.out.println("Хочу кушать");
+            System.out.println(nameC + " хочет кушать");
         }
     }
 }
