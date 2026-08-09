@@ -19,6 +19,7 @@ public class InputHandler {
                 return num;
             } catch (InputMismatchException e) {
                 System.out.println("Ошибка! Введите целое число\n");
+                
             }
         }
     }

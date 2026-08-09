@@ -7,22 +7,17 @@ import java.util.concurrent.TimeUnit;
 
 class Main {
     static void main(String[] args) {
-        int password = 2212144;
+        int password = 222;
         int pass;
 
-
+        Number number = new Number();
         InputHandler s = new InputHandler();
+        Delay td = new Delay();
         Cat cat1 = new Cat();
         Dog dog1 = new Dog();
 
         System.out.print("Добро пожаловать\n");
-
-        try {
-            TimeUnit.SECONDS.sleep(2);
-        } catch (InterruptedException e) {
-            System.out.println("Ожидание прервано");
-        }
-
+        td.timeDelay();
         System.out.print("Введите пароль:\n");
         for (int i = 0; i <= 4 ; i++ ) {
             pass = InputHandler.readInt();
@@ -30,14 +25,16 @@ class Main {
                 System.out.print("Успешный вход\n");
                 break;
             } else if (i == 3){
+                System.out.print("_".repeat(150));
                 System.out.print("Вход запрещен, превышен лимит\n");
+                System.out.print("_".repeat(150));
                 return;
             } else {
                 System.out.println("Неверный пароль, попробуйте еще раз\n");
             }
         }
 
-        System.out.print("Выберите программу:\n1.Кошка\n2.Собака\n3.Выход\n");
+        System.out.print("Выберите программу:\n1.Кошка\n2.Собака\n3.Телефонная книга\n4.Выход\n");
         int num = InputHandler.readInt();
         switch (num) {
             case 1:
@@ -65,7 +62,30 @@ class Main {
                 dog1.barkbark();
                 return;
             case 3:
-                return;
+                System.out.print("1. Внести номер\n2. Просмотреть телефонную книгу\n");
+                int a = InputHandler.readInt();
+                switch (a) {
+                    case 1:
+                        for (; ; ) {
+                            System.out.print("Для добавления номера в книгу, введите имя:\n");
+                            String nm = InputHandler.readStr();
+                            td.timeDelay();
+                            System.out.print("Введите номер:\n");
+                            String ph = InputHandler.readStr();
+                            td.timeDelay();
+                            System.out.print("Номер успешно добавлен\n");
+                            Number.addPhone(nm, ph);
+                            System.out.print("Для выхода - введите 'C'\n");
+                            String b = InputHandler.readStr();
+                            if (b.equalsIgnoreCase("C") || b.equalsIgnoreCase("С")) {
+                                break;
+                            }
+                        }
+                    case 2:
+                        System.out.print("Телефонная книга:\n");
+                        Number.printAll();
+                }
+            case 4:
         }
     }
 }
