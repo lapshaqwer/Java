@@ -25,9 +25,7 @@ class Main {
                 System.out.print("Успешный вход\n");
                 break;
             } else if (i == 3){
-                System.out.print("_".repeat(150));
                 System.out.print("Вход запрещен, превышен лимит\n");
-                System.out.print("_".repeat(150));
                 return;
             } else {
                 System.out.println("Неверный пароль, попробуйте еще раз\n");
