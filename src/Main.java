@@ -6,12 +6,11 @@ import java.util.concurrent.TimeUnit;
 //
 
 class Main {
-    static void main(String[] args) {
-        int password = 222;
-        int pass;
+    final private static int password = 222 ;
 
-        Number number = new Number();
-        InputHandler s = new InputHandler();
+    static void main(String[] args) {
+
+        MyThread t1 = new MyThread();
         Delay td = new Delay();
         Cat cat1 = new Cat();
         Dog dog1 = new Dog();
@@ -20,7 +19,7 @@ class Main {
         td.timeDelay();
         System.out.print("Введите пароль:\n");
         for (int i = 0; i <= 4 ; i++ ) {
-            pass = InputHandler.readInt();
+            int pass = InputHandler.readInt();
             if (pass == password) {
                 System.out.print("Успешный вход\n");
                 break;
@@ -31,6 +30,8 @@ class Main {
                 System.out.println("Неверный пароль, попробуйте еще раз\n");
             }
         }
+
+        t1.start();
 
         System.out.print("Выберите программу:\n1.Кошка\n2.Собака\n3.Телефонная книга\n4.Выход\n");
         int num = InputHandler.readInt();

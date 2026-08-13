@@ -8,4 +8,20 @@ public class Delay {
             System.out.println("Ожидание прервано");
         }
     }
+
+    public void timeDelay2() {
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            System.out.println("Ожидание прервано");
+        }
+    }
+
+    public void timeDelay5() {
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            System.out.println("Ожидание прервано");
+        }
+    }
 }
